@@ -46,8 +46,9 @@ public class Mobile_Page_Test extends Magento_Base
 		String cosy2 = sonyexp_p.get_cost2();
 		Assert.assertEquals(cost1, cosy2);
 		
+		
 	}
-	
+	@Test
 	public void day3()
 	{
 		home_p.click_Mobile();
@@ -55,8 +56,24 @@ public class Mobile_Page_Test extends Magento_Base
 		sonyexp_p.quant();
 		String act =sonyexp_p.get_error_massage();
 		String exp = input.getProperty("exp_error_masage");
-		Assert.assertEquals(act, exp);
-		
+		Assert.assertEquals(act, exp);	
+		System.out.println("day 3 test case passed");
 	}
+	
+	@Test
+	public void day4()
+	{
+		home_p.click_Mobile();
+		mobile_p.add_to_campare();
+		ArrayList<String> a = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(a.get(1));
+		String act = compare_p.getData();
+		String exp = "Compare Products";
+		Assert.assertEquals(act, exp);
+		System.out.println("day 4 test case passed");
+	}
+	
+	
+	
 
 }

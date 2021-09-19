@@ -22,11 +22,15 @@ public class Mobile_Page extends Magento_Base
 	
 	@FindBy(xpath = "//h2[@class='product-name']") List<WebElement> nameofProduct;
 	
-	@FindBy(xpath = "//li[@class='item last'][1]/div/div[3]/ul/li[2]") WebElement compare1;
-	
 	@FindBy(xpath = "//span[@id='product-price-1']") WebElement sony_cost;
 	
 	@FindBy(xpath = "//a[@title='Xperia']") WebElement sonyExp;
+	
+	@FindBy(xpath ="//div[@class='category-products']//ul/li[1]/div/div[3]/ul/li[2]") WebElement iphone_camop;
+	
+	@FindBy(xpath="//div[@class='category-products']//ul/li[3]/div/div[3]/ul/li[2]") WebElement sony_camp;
+	
+	@FindBy(xpath="//button[@title='Compare']") WebElement camp_button;
 	
 	public Mobile_Page()
 	{
@@ -81,11 +85,15 @@ public class Mobile_Page extends Magento_Base
 	
 	}
 	
-	public void add_to_Compare()
+	public void add_to_campare()
 	{
-		compare1.click();
-		compare1.click();
+		iphone_camop.click();
 		
+		sony_camp.click();
+		
+		camp_button.click();
 	}
+	
+	
 
 }
